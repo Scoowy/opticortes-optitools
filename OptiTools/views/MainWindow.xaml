@@ -27,7 +27,7 @@
                         <Image Source="/OptiTools;component/resources/HalfPlankPrice-Icon.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Linear cut">
+                <MenuItem Header="_Linear cut" IsEnabled="False">
                     <MenuItem.Icon>
                         <Image Source="/OptiTools;component/resources/OptiTool-Icon.png" />
                     </MenuItem.Icon>
@@ -58,6 +58,19 @@
 
                     <!-- BLOCK Action buttons -->
                     <Grid>
+                        
+                        <Grid.Resources>
+                            <Style TargetType="Button" x:Key="RoundedBtn">
+                                <Style.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Style.Resources>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Style>
+                        </Grid.Resources>
+                        
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="180" />
                             <ColumnDefinition Width="180" />
@@ -67,28 +80,28 @@
                             <RowDefinition Height="180" />
                         </Grid.RowDefinitions>
 
-                        <Button Width="150" Height="150" Grid.Column="0" Grid.Row="0">
+                        <Button Width="150" Height="150" Grid.Column="0" Grid.Row="0" Style="{StaticResource RoundedBtn}">
                             <StackPanel Orientation="Vertical" Width="128">
                                 <Image Source="/OptiTools;component/resources/HalfPlankPrice-Icon.png" />
                                 <TextBlock HorizontalAlignment="Center">Half Plank Price</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Width="150" Height="150" Grid.Column="1" Grid.Row="0">
+                        <Button Width="150" Height="150" Grid.Column="1" Grid.Row="0" Style="{StaticResource RoundedBtn}">
                             <StackPanel Orientation="Vertical" Width="128">
                                 <Image Source="/OptiTools;component/resources/SquareMeterPrice-Icon.png" />
                                 <TextBlock HorizontalAlignment="Center">Half Plank Price</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Width="150" Height="150" Grid.Column="0" Grid.Row="1">
+                        <Button Width="150" Height="150" Grid.Column="0" Grid.Row="1" IsEnabled="False" Style="{StaticResource RoundedBtn}">
                             <StackPanel Orientation="Vertical" Width="128">
-                                <Image Source="/OptiTools;component/resources/HalfPlankPrice-Icon.png" />
+                                <TextBlock HorizontalAlignment="Center" FontSize="46" Height="128">...</TextBlock>
                                 <TextBlock HorizontalAlignment="Center">Half Plank Price</TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button Width="150" Height="150" Grid.Column="1" Grid.Row="1">
+                        <Button Width="150" Height="150" Grid.Column="1" Grid.Row="1" IsEnabled="False" Style="{StaticResource RoundedBtn}">
                             <StackPanel Orientation="Vertical" Width="128">
-                                <Image Source="/OptiTools;component/resources/SquareMeterPrice-Icon.png" />
-                                <TextBlock HorizontalAlignment="Center">Half Plank Price</TextBlock>
+                                <TextBlock HorizontalAlignment="Center" FontSize="46" Height="128">...</TextBlock>
+                                <TextBlock HorizontalAlignment="Center">Others</TextBlock>
                             </StackPanel>
                         </Button>
                     </Grid>
