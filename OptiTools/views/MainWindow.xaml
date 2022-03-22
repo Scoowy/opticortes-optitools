@@ -3,10 +3,101 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:OptiTools"
         mc:Ignorable="d"
-        Title="OptiCortes - OptiTools" Height="450" Width="800">
-    <Grid>
+        Title="OptiCortes - OptiTools" Height="500" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" />
+                <MenuItem Header="_Save" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_M2 price">
+                    <MenuItem.Icon>
+                        <Image Source="/OptiTools;component/resources/SquareMeterPrice-Icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Half plank">
+                    <MenuItem.Icon>
+                        <Image Source="/OptiTools;component/resources/HalfPlankPrice-Icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Linear cut">
+                    <MenuItem.Icon>
+                        <Image Source="/OptiTools;component/resources/OptiTool-Icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" />
+            </MenuItem>
+        </Menu>
+        <TabControl DockPanel.Dock="Bottom">
 
-    </Grid>
+            <!-- BLOCK MainTab -->
+            <TabItem Header="Tools">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal"
+                            Margin="24">
+
+                    <!-- BLOCK Company Logo -->
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image Source="/OptiTools;component/resources/OptiTool-Icon.png" MaxWidth="200" />
+                        <TextBlock HorizontalAlignment="Center" FontSize="36" FontWeight="Bold">OptiTools</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" FontSize="18">OptiCortes</TextBlock>
+                    </StackPanel>
+                    <!-- END BLOCK -->
+
+                    <!-- BLOCK Separator -->
+                    <Separator Margin="24,0" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+                    <!-- END BLOCK -->
+
+                    <!-- BLOCK Action buttons -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="180" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="180" />
+                            <RowDefinition Height="180" />
+                        </Grid.RowDefinitions>
+
+                        <Button Width="150" Height="150" Grid.Column="0" Grid.Row="0">
+                            <StackPanel Orientation="Vertical" Width="128">
+                                <Image Source="/OptiTools;component/resources/HalfPlankPrice-Icon.png" />
+                                <TextBlock HorizontalAlignment="Center">Half Plank Price</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button Width="150" Height="150" Grid.Column="1" Grid.Row="0">
+                            <StackPanel Orientation="Vertical" Width="128">
+                                <Image Source="/OptiTools;component/resources/SquareMeterPrice-Icon.png" />
+                                <TextBlock HorizontalAlignment="Center">Half Plank Price</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button Width="150" Height="150" Grid.Column="0" Grid.Row="1">
+                            <StackPanel Orientation="Vertical" Width="128">
+                                <Image Source="/OptiTools;component/resources/HalfPlankPrice-Icon.png" />
+                                <TextBlock HorizontalAlignment="Center">Half Plank Price</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button Width="150" Height="150" Grid.Column="1" Grid.Row="1">
+                            <StackPanel Orientation="Vertical" Width="128">
+                                <Image Source="/OptiTools;component/resources/SquareMeterPrice-Icon.png" />
+                                <TextBlock HorizontalAlignment="Center">Half Plank Price</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                    <!-- END BLOCK -->
+
+                </StackPanel>
+            </TabItem>
+            <!-- END BLOCK -->
+
+        </TabControl>
+    </DockPanel>
 </Window>
