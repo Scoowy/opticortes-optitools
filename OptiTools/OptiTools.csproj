@@ -5,10 +5,22 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon>resources\OptiTool-Icon.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
       <Folder Include="resources" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="resources\HalfPlankPrice-Icon.png" />
+      <Resource Include="resources\HalfPlankPrice-Icon.png" />
+      <None Remove="resources\OptiTool-Icon.ico" />
+      <Resource Include="resources\OptiTool-Icon.ico" />
+      <None Remove="resources\OptiTool-Icon.png" />
+      <Resource Include="resources\OptiTool-Icon.png" />
+      <None Remove="resources\SquareMeterPrice-Icon.png" />
+      <Resource Include="resources\SquareMeterPrice-Icon.png" />
     </ItemGroup>
 
 </Project>
