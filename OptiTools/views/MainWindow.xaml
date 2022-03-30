@@ -37,8 +37,17 @@
                 <MenuItem Header="_About" />
             </MenuItem>
         </Menu>
-        <TabControl DockPanel.Dock="Bottom">
+        <TabControl Name="TabPanels" DockPanel.Dock="Bottom">
 
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Height="21" Width="100">
+                        <TextBlock Width="80" Text="{Binding Header}"/>
+                        <Image Source="/OptiTools;component/resources/OptiTool-Icon.png" Width="20" Height="20" MouseDown="CloseTabBtn_OnMouseDown"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            
             <!-- BLOCK MainTab -->
             <TabItem Header="Tools">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal"

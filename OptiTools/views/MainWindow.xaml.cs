@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace OptiTools.views {
     /// <summary>
@@ -7,6 +8,10 @@ namespace OptiTools.views {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+        }
+
+        private void CloseTabBtn_OnMouseDown(object sender, MouseButtonEventArgs e) {
+            throw new System.NotImplementedException();
         }
     }
 }
